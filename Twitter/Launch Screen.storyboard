@@ -16,19 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Twitter_Logo_Blue-1" translatesAutoresizingMaskIntoConstraints="NO" id="zkl-Qo-67A">
-                                <rect key="frame" x="3.5" y="253" width="407" height="390"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="390" id="GBV-7P-hLT"/>
-                                    <constraint firstAttribute="width" constant="407" id="aJv-sx-XRD"/>
-                                </constraints>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xnd-rp-EaS">
+                                <rect key="frame" x="172" y="438" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="zkl-Qo-67A" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4qD-QO-fOb"/>
-                            <constraint firstItem="zkl-Qo-67A" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="c2Q-72-qnz"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
@@ -37,7 +33,4 @@
             <point key="canvasLocation" x="50.724637681159422" y="374.33035714285711"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Twitter_Logo_Blue-1" width="400" height="400"/>
-    </resources>
 </document>
