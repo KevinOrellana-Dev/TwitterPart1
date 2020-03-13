@@ -90,7 +90,7 @@
                                             </constraints>
                                             <state key="normal" image="favor-icon"/>
                                             <connections>
-                                                <action selector="retweet:" destination="9ua-xH-J0c" eventType="touchUpInside" id="7Vc-gP-uf9"/>
+                                                <action selector="favoriteTweet:" destination="9ua-xH-J0c" eventType="touchUpInside" id="nQH-1X-0gu"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acv-B5-5cp">
@@ -101,7 +101,7 @@
                                             </constraints>
                                             <state key="normal" image="retweet-icon"/>
                                             <connections>
-                                                <action selector="favoriteTweet:" destination="9ua-xH-J0c" eventType="touchUpInside" id="BnB-4J-tVA"/>
+                                                <action selector="retweet:" destination="9ua-xH-J0c" eventType="touchUpInside" id="iHG-e8-DRr"/>
                                             </connections>
                                         </button>
                                     </subviews>

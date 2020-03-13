@@ -16,8 +16,9 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tweetContent: UILabel!
-    
-    
+    var favorited: Bool = false
+    var tweetId: Int = -1
+    var retweeted: Bool = false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,18 +31,69 @@ class TweetCell: UITableViewCell {
     }
     @IBAction func favoriteTweet(_ sender: Any) {
         
-        var favorited: Bool = false
-        func setFavorited(_isFavorited:Bool)
+        let tobeFavorited = !favorited
+        
+        if(tobeFavorited)
         {
-            favorited = _isFavorited
+            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {
+                self.setFavorited(true)
+            }, failure: { (Error) in
+                print("Favorite did not succeed: \(Error)")
+            })
+        }
+        else
+        {
+            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetId, success: {
+                self.setFavorited(false)
+            }, failure: { (Error) in
+                    print("unfavorite did not suceed: \(Error)")
+            })
+        }
             
-            if(favorited)
-            {
-                
-            }
+            
+
+    }
+    
+    func setRetweeted(_ isRetweeted: Bool)
+    {
+        if(isRetweeted)
+        {
+            retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControl.State.normal)
+            
+            retweetButton.isEnabled = false
+            
+        }
+        
+        else{
+            
+               retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControl.State.normal)
+                     
+              retweetButton.isEnabled = true
+        }
+    }
+    
+        
+    
+    func setFavorited(_ isFavorited:Bool)
+    {
+        favorited = isFavorited
+        
+        if(favorited)
+        {
+            favButton.setImage(UIImage(named: "favor-icon-red"), for: UIControl.State.normal)
+        }
+        else
+        {
+            favButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
         }
     }
     
     @IBAction func retweet(_ sender: Any) {
+        
+        TwitterAPICaller.client?.retweet(tweetId: tweetId, success: {
+            self.setRetweeted(true)
+        }, failure: { (Error) in
+            print("Error in retweeting \(Error)")
+        })
     }
 }
